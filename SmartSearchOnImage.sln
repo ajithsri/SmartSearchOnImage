@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCR Test", "OCR Test\OCR Test.csproj", "{2DE989EF-DDCF-4690-A693-19367CF35890}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchEngine", "OCR Test\SearchEngine.csproj", "{2DE989EF-DDCF-4690-A693-19367CF35890}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

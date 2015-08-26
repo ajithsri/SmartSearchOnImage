@@ -33,7 +33,7 @@ namespace OCR_Test
             //{ Read("33"); });
             //tasks[3] = Task.Factory.StartNew(() =>
             //{ Read("34"); });
-            new Program().Read("5");
+            new Program().Read("aa");
             ///Task.WaitAll(tasks);
 
             sw.Stop();
