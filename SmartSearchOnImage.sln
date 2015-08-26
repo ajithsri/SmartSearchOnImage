@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchProcesser", "OCR Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchEngine", "SearchEngine\SearchEngine.csproj", "{B3AA7AE8-168B-4216-AE42-2300D4F536D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchWeb", "SearchWeb\SearchWeb.csproj", "{EB1CF9A2-0FF9-433E-8622-BEA8E38979CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{ED9D0B74-C75E-4808-8F06-92EF3A2A4667}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B3AA7AE8-168B-4216-AE42-2300D4F536D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3AA7AE8-168B-4216-AE42-2300D4F536D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3AA7AE8-168B-4216-AE42-2300D4F536D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1CF9A2-0FF9-433E-8622-BEA8E38979CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1CF9A2-0FF9-433E-8622-BEA8E38979CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1CF9A2-0FF9-433E-8622-BEA8E38979CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1CF9A2-0FF9-433E-8622-BEA8E38979CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED9D0B74-C75E-4808-8F06-92EF3A2A4667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED9D0B74-C75E-4808-8F06-92EF3A2A4667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED9D0B74-C75E-4808-8F06-92EF3A2A4667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED9D0B74-C75E-4808-8F06-92EF3A2A4667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

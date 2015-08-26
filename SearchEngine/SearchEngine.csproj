@@ -38,8 +38,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="tessnet2_64">
-      <HintPath>..\OCR Test\bin\tessnet2_64.dll</HintPath>
+    <Reference Include="tessnet2_32">
+      <HintPath>bin\tessnet2_32.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

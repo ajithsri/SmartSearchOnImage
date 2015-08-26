@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
+using SearchEngine;
 
 namespace OCR_Test
 {
@@ -33,9 +34,13 @@ namespace OCR_Test
             //{ Read("33"); });
             //tasks[3] = Task.Factory.StartNew(() =>
             //{ Read("34"); });
-            program.ReadData("aa");
+            
             ///Task.WaitAll(tasks);
 
+            //program.ReadData("aa");
+
+            Engine engin = Engine.Instance;
+            engin.ReadData("aa");
             sw.Stop();
             Console.WriteLine("Elapsed={0}", sw.Elapsed);
 
@@ -64,6 +69,7 @@ namespace OCR_Test
             //new Program().Read(fileName);
         }
 
+        
         public void ReadMulti()
         {
             Stopwatch sw = new Stopwatch();
@@ -135,7 +141,7 @@ namespace OCR_Test
 
                 string Results = "";
 
-
+                //x-left, y-top x2- right y2-bottom
                 foreach (tessnet2.Word word in result)
                 {
                     Results += word.Confidence + ", " + word.Text + ", " + word.Top + ", " + word.Bottom + ", " + word.Left + ", " + word.Right + "\n";

@@ -15,22 +15,38 @@ namespace SearchEngine
         Tesseract ocr;
         Dictionary<string, string> dic = new Dictionary<string, string>();
 
-        public Engine()
+
+        private static Engine instance;
+
+        public static Engine Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Engine();
+                }
+                return instance;
+            }
+        }
+
+
+        private Engine()
         {
             ocr = new Tesseract();
             ocr.SetVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,$-/#&=()\"':?"); // If digit only
-            ocr.Init(@"..\..\..\tessdata1", "eng", false); ; // To use correct tessdata
+            ocr.Init(@"D:\Ajith\GitHub\SmartSearchOnImage\tessdata1", "eng", false); ; // To use correct tessdata
         }
-        static void Main1()
-        {
-            var program = new Engine();
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
+        //static void Main1()
+        //{
+        //    var program = new Engine();
+        //    Stopwatch sw = new Stopwatch();
+        //    sw.Start();
 
-            program.ReadData("aa");
+        //    program.ReadData("aa");
 
-            sw.Stop();
-        }
+        //    sw.Stop();
+        //}
 
         public void ReadMulti()
         {
@@ -68,7 +84,8 @@ namespace SearchEngine
         {
             try
             {
-                var image = new Bitmap(@"..\..\..\test\" + fileName + ".jpg");
+                string startupPath = Environment.CurrentDirectory;
+                var image = new Bitmap(@"D:\Ajith\GitHub\SmartSearchOnImage\WebApplication1\images\" + fileName);
 
                 List<tessnet2.Word> result = ocr.DoOCR(image, System.Drawing.Rectangle.Empty);
 
@@ -76,7 +93,8 @@ namespace SearchEngine
 
                 foreach (tessnet2.Word word in result)
                 {
-                    var key = word.Top + ", " + word.Bottom + ", " + word.Left + ", " + word.Right;
+                    //x-left, y-top x2- right y2-bottom
+                    var key = word.Left + ", " + word.Top + ", " + word.Right + ", " + word.Bottom;
                     dic.Add(key, word.Text);
                     
                 }                
