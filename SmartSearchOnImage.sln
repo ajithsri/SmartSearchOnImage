@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchEngine", "OCR Test\SearchEngine.csproj", "{2DE989EF-DDCF-4690-A693-19367CF35890}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchProcesser", "OCR Test\SearchProcesser.csproj", "{2DE989EF-DDCF-4690-A693-19367CF35890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchEngine", "SearchEngine\SearchEngine.csproj", "{B3AA7AE8-168B-4216-AE42-2300D4F536D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2DE989EF-DDCF-4690-A693-19367CF35890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DE989EF-DDCF-4690-A693-19367CF35890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DE989EF-DDCF-4690-A693-19367CF35890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3AA7AE8-168B-4216-AE42-2300D4F536D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3AA7AE8-168B-4216-AE42-2300D4F536D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3AA7AE8-168B-4216-AE42-2300D4F536D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3AA7AE8-168B-4216-AE42-2300D4F536D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,67 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tessnet2;
-using System.Drawing;
-using System.IO;
-using System.Reflection;
-using System.Diagnostics;
 
-namespace OCR_Test
+namespace SearchEngine
 {
-    class Program
+    public class Engine
     {
         Tesseract ocr;
         Dictionary<string, string> dic = new Dictionary<string, string>();
 
-        public Program(){
+        public Engine()
+        {
             ocr = new Tesseract();
             ocr.SetVariable("tessedit_char_whitelist", "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,$-/#&=()\"':?"); // If digit only
             ocr.Init(@"..\..\..\tessdata1", "eng", false); ; // To use correct tessdata
         }
-        static void Main(string[] args)
+        static void Main1()
         {
-            var program = new Program();
+            var program = new Engine();
             Stopwatch sw = new Stopwatch();
             sw.Start();
-            //Task[] tasks = new Task[1];
-            //tasks[0] = Task.Factory.StartNew(() => { new Test().Read("2"); });
-            //tasks[1] = Task.Factory.StartNew(() => { new Program().Read("32"); });
-            //tasks[2] = Task.Factory.StartNew(() =>
-            //{ Read("33"); });
-            //tasks[3] = Task.Factory.StartNew(() =>
-            //{ Read("34"); });
+
             program.ReadData("aa");
-            ///Task.WaitAll(tasks);
 
             sw.Stop();
-            Console.WriteLine("Elapsed={0}", sw.Elapsed);
-
-
-
-
-            Console.WriteLine("Enter search text - enter xx to exit");
-            string line;
-            while ((line = Console.ReadLine()) != "xx")
-            {
-                var result = program.SearchData(line);
-                foreach (var r in result)
-                    Console.WriteLine(r);
-            }
-
-
-
-            Console.ReadLine();
-
-           // var pp = new Program();
-           // var fileName = Console.ReadLine();
-
-            //pp.SingleRead("3");
-
-            //pp.ReadMulti();
-            //new Program().Read(fileName);
         }
 
         public void ReadMulti()
