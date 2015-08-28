@@ -39,20 +39,26 @@ namespace WebApplication1
             engine = Engine.Instance;
             var result = engine.SearchData(text);
 
+            if (result.ToList() == null)
+            {
+                lblMessgae.Text = "no result";
+                return;
+            }
 
-            string fileName = imgDemo.ImageUrl;
+            string fileName = imgDemo.ImageUrl.Replace("_searched","");
             Bitmap bmp = new Bitmap(@"D:\Ajith\GitHub\SmartSearchOnImage\WebApplication1\" + fileName);
             Graphics g = Graphics.FromImage(bmp);
-
+            Pen pen = new Pen(Color.Green, 5);
             foreach (var r in result)
             {//x-left, y-top x2- right y2-bottom
                 var cor = r.Split(',').Select(n=>Convert.ToInt32(n)).ToArray();
-                g.DrawRectangle(Pens.Black, cor[0], cor[1], cor[2] - cor[0], cor[3] - cor[1]);
+                g.DrawRectangle(pen, cor[0], cor[1], cor[2] - cor[0], cor[3] - cor[1]);
             }
 
 
-            bmp.Save(@"D:\Ajith\GitHub\SmartSearchOnImage\WebApplication1\images\" + text + ".jpg");
-            this.imgDemo.ImageUrl = "images/" + text + ".jpg";
+            bmp.Save(@"D:\Ajith\GitHub\SmartSearchOnImage\WebApplication1\" + fileName.Insert(fileName.LastIndexOf('.'), "_searched"));
+            this.imgDemo.ImageUrl = fileName.Insert(fileName.LastIndexOf('.'), "_searched");
+            
             g.Dispose();
             bmp.Dispose();
 

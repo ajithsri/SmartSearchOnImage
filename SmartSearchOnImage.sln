@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchEngine", "SearchEngin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchWeb", "SearchWeb\SearchWeb.csproj", "{EB1CF9A2-0FF9-433E-8622-BEA8E38979CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{ED9D0B74-C75E-4808-8F06-92EF3A2A4667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Search.Web", "WebApplication1\Search.Web.csproj", "{ED9D0B74-C75E-4808-8F06-92EF3A2A4667}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

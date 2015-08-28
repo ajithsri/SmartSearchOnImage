@@ -69,16 +69,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="SearchUI.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="SearchUI.aspx.cs">
+      <DependentUpon>SearchUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="SearchUI.aspx.designer.cs">
+      <DependentUpon>SearchUI.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

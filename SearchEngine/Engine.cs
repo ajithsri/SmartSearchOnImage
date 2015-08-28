@@ -13,7 +13,7 @@ namespace SearchEngine
     public class Engine
     {
         Tesseract ocr;
-        Dictionary<string, string> dic = new Dictionary<string, string>();
+        Dictionary<string, tessnet2.Word> dic = new Dictionary<string, tessnet2.Word>();
 
 
         private static Engine instance;
@@ -95,7 +95,7 @@ namespace SearchEngine
                 {
                     //x-left, y-top x2- right y2-bottom
                     var key = word.Left + ", " + word.Top + ", " + word.Right + ", " + word.Bottom;
-                    dic.Add(key, word.Text);
+                    dic.Add(key, word);
                     
                 }                
             }
@@ -107,8 +107,51 @@ namespace SearchEngine
 
         public IEnumerable<string> SearchData(string text)
         {
-            var values = dic.Where(pc => pc.Value.Contains(text)).Select(x=>x.Key);
-            return values;
+            List<string> coordinates = new List<string>();
+            //var charList = dic.Where(pc => pc.Value.Text.Contains(text)).Select(x => x.Value.CharList);
+            //if (charList.Count() > 0)
+            //{
+            //    //int sIndex, eIndex;
+
+            //    foreach (List<Character> list in charList)
+            //    {
+            //        int sIndex, eIndex, count = 0;
+            //        foreach (Character chart in list)
+            //        {
+            //            if (chart.Equals(text[count]))
+            //            {
+            //                sIndex = count;
+            //            }
+            //        }
+            //        //Results += chart.Value + ", " + chart.Top + ", " + chart.Bottom + ", " + chart.Left + ", " + chart.Right + "\n";
+            //    }
+
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
+            var wordList = dic.Where(pc => pc.Value.Text.Contains(text)).Select(x => x.Value);
+            if (wordList.Count() > 0)
+            {
+                //int sIndex, eIndex;
+
+                foreach (Word word in wordList)
+                {
+                    int sIndex = word.Text.IndexOf(text);
+                    int eIndex = sIndex + text.Length - 1;
+
+                    string coordinate = word.CharList[sIndex].Left + "," + word.CharList[sIndex].Top + "," + word.CharList[eIndex].Right + "," + word.CharList[eIndex].Bottom;
+
+                    coordinates.Add(coordinate);
+                }
+                return coordinates;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void Read(string fileName)
