@@ -12,7 +12,7 @@ namespace SearchEngine
 {
     public class Engine
     {
-        Tesseract ocr;
+        Tesseract ocr; 
         Dictionary<string, tessnet2.Word> dic = new Dictionary<string, tessnet2.Word>();
 
 
